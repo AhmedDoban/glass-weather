@@ -48,8 +48,8 @@ function rainFall() {
 	waterDrop.classList.add('fa-tint');
 	waterDrop.style.left = Math.random() * window.innerWidth + 'px';
 	waterDrop.style.animationDuration = Math.random() * 1 + 's';
-	waterDrop.style.opacity = Math.random() + 0.4;
-	waterDrop.style.fontSize = Math.random() * 7 +'px';
+	waterDrop.style.opacity = Math.random() + .4;
+	waterDrop.style.fontSize = Math.random() * 15 +'px';
 	
 	document.body.appendChild(waterDrop);
 	
