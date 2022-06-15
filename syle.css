@@ -64,9 +64,8 @@ card
     box-shadow: 0 0 10px rgba(0,0 ,0, .25);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    background-repeat: repeat-x;
-    -webkit-background-clip: text;
 }
+
 
 .circle{
     width: 200px;
@@ -75,6 +74,7 @@ card
     position: absolute;
     animation: move-up .8s ease-in infinite alternate-reverse;
 }
+
 .circle:nth-child(1){
     top: -90px;
     right: -90px;
@@ -101,6 +101,20 @@ card
     to{
         transform: translateY(20px);
     }
+}
+@media(max-width: 996px) {  
+  .circle{
+    width: 400px;
+    height: 400px;
+  }
+  .circle:nth-child(1){
+    top: -150px;
+    right: -150px;
+  }
+  .circle:nth-child(2){
+    bottom: -190px;
+    left: -120px;
+  }
 }
 .card-inner .content h1{
     color: aliceblue;
@@ -175,6 +189,7 @@ card
   @media(max-width: 996px) {  
     .txt{
       font-size: 50px;
+      margin-top: 50px;
     }
   }
   .Card .card-inner .weather-icon img{
