@@ -5,6 +5,7 @@ var descrip = document.querySelector('#description')
 var temp = document.querySelector('#temp')
 var wind = document.querySelector('#wind')
 var locationIcon = document.querySelector('.weather-icon');
+var error=document.querySelector('#snackbar')
 apik = "118d349a7305ac6c68aabac02ca9c657"
 function convertion(val){
     return (val - 273).toFixed(2)
@@ -25,23 +26,24 @@ btn.addEventListener('click', function(){
             locationIcon.innerHTML = `<img src="icons/${icon}.png">`;
 
         })
-        .catch(err => alert('You entered Wrong city name'))
+        .catch(err =>( 
+            error.className="show",
+            error.innerHTML="You entered Wrong city name"),
+            setTimeout(function(){ error.className = error.className.replace("show", ""); }, 3000)
+            )
     })
 
 
 
 
-    /*
-    ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+    /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
     rain
-    ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-    */
+    ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
 
     setInterval(rainFall, 10);
 
 function rainFall() {
   const waterDrop = document.createElement('i');
-  
 	waterDrop.classList.add('fas');
 	waterDrop.classList.add('fa-tint');
 	waterDrop.style.left = Math.random() * window.innerWidth + 'px';

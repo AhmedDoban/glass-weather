@@ -230,3 +230,54 @@ card
 #description span ,#temp span ,#wind span{
   color: rgb(86, 91, 91);
 }
+
+
+
+/*tost container*/
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: rgba(111, 105, 105, 0.395);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 50%;
+  font-size: 17px;
+  border-radius: 50px;
+}@media(max-width: 996px) {  
+  #snackbar{
+    font-size: 50PX;
+  }
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 50%; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 50%; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 50%; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 50%; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
