@@ -6,6 +6,7 @@ var temp = document.querySelector('#temp')
 var wind = document.querySelector('#wind')
 var locationIcon = document.querySelector('.weather-icon');
 var error=document.querySelector('#snackbar')
+
 apik = "118d349a7305ac6c68aabac02ca9c657"
 function convertion(val){
     return (val - 273).toFixed(2)
@@ -23,7 +24,7 @@ btn.addEventListener('click', function(){
             temp.innerHTML = `Temperature <br> <span>${ convertion(tempature)} C</span>`
             description.innerHTML = `Sky Conditions <br> <span>${descrip}<span>`
             wind.innerHTML = `Wind Speed <br><span>${wndspd} km/h<span>`
-            locationIcon.innerHTML = `<img src="icons/${icon}.png">`;
+            locationIcon.innerHTML = `<img src="icons/${icon}.png" style="animation:none">`;
 
         })
         .catch(err =>( 

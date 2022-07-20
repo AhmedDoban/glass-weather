@@ -198,7 +198,13 @@ card
     width: 100px;
     right:0;
     top:12%;
-    animation: move-up .8s ease-in infinite alternate-reverse;;
+    animation: move-right 1.8s ease-in infinite alternate-reverse;;
+  }
+  @keyframes move-right{
+    100%{
+      transform: translateX(-300%);
+    }
+    
   }
   .data{
     display: grid;
