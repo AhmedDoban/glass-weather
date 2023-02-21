@@ -35,21 +35,8 @@ body {
   background: #000;
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــ
- # toastify
+ # container
 ــــــــــــــــــــــــــــــــــــــــــــــــــ*/
-.toastify {
-  max-width: calc(50% - 30px) !important;
-  width: 100%;
-  display: flex !important;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 768px) {
-  .toastify {
-    max-width: calc(100% - 30px) !important;
-    width: 100%;
-  }
-}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -242,7 +229,7 @@ body {
 }
 .other-weather-container .card h3 {
   font-size: 25px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #f2ab06;
 }
 .other-weather-container .card img {
@@ -265,4 +252,5 @@ body {
 .other-weather-container .card h4 {
   font-size: 25px;
   color: #ddd;
+  text-align: center;
 }
