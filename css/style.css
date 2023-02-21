@@ -75,7 +75,7 @@ body {
   height: 100%;
   overflow: hidden;
   position: absolute;
-  animation: blnk 15s linear infinite;
+  animation: blnk 5s linear infinite;
   z-index: -1;
 }
 .rain i {
@@ -83,7 +83,7 @@ body {
   bottom: 200px;
   position: absolute;
   color: rgba(255, 255, 255, 0.6);
-  animation: fall 15s linear infinite;
+  animation: fall 5s linear infinite;
 }
 @keyframes fall {
   to {
@@ -99,7 +99,7 @@ body {
   96%,
   99%,
   100% {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
 .toggle:checked ~ .rain {
@@ -213,6 +213,11 @@ body {
   gap: 20px;
   padding-top: 50px;
   padding-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .other-weather-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 .other-weather-container .card {
   width: 100%;
