@@ -8,7 +8,7 @@
 }
 :root {
   --main-transition: all 0.5s ease-in-out;
-  --main-color: #151f2a;
+  --main-color: #1d1f20;
   --orange-color: #f2ab06;
 }
 body {
@@ -75,19 +75,19 @@ body {
   height: 100%;
   overflow: hidden;
   position: absolute;
-  animation: blnk 5s linear infinite;
+  background-image: url("https://cdn.discordapp.com/attachments/744182992037216260/990016273008177242/rain1.png"),
+    url("https://cdn.discordapp.com/attachments/744182992037216260/990016273217900584/rain2.png"),
+    url("https://cdn.discordapp.com/attachments/744182992037216260/990016273456988240/rain3.png");
+  animation: snow 1.5s linear infinite, blnk 7s linear infinite;
   z-index: -1;
 }
-.rain i {
-  height: 30px;
-  bottom: 200px;
-  position: absolute;
-  color: rgba(255, 255, 255, 0.6);
-  animation: fall 5s linear infinite;
-}
-@keyframes fall {
-  to {
-    margin-top: 900px;
+
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
   }
 }
 @keyframes blnk {
@@ -99,7 +99,7 @@ body {
   96%,
   99%,
   100% {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 .toggle:checked ~ .rain {
@@ -130,9 +130,9 @@ body {
   text-align: center;
   outline: none;
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(14px);
+  background: transparent;
+  border: 1px solid var(--orange-color);
+  border-right: 0;
   color: #fff;
   border-radius: 5px;
   border-top-right-radius: 0;
@@ -152,10 +152,11 @@ body {
   font-size: 20px;
   text-align: center;
   outline: none;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(14px);
+  border: 1px solid var(--orange-color);
+  border-left: 0;
+  background: rgba(61, 61, 61, 0.3);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   color: #fff;
   border-radius: 5px;
   border-top-left-radius: 0;
@@ -221,8 +222,8 @@ body {
 }
 .other-weather-container .card {
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
@@ -236,6 +237,7 @@ body {
   font-size: 25px;
   text-transform: capitalize;
   color: #f2ab06;
+  text-align: center;
 }
 .other-weather-container .card img {
   width: 80px;
