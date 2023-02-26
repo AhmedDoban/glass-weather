@@ -80,6 +80,7 @@ body {
     url("https://cdn.discordapp.com/attachments/744182992037216260/990016273456988240/rain3.png");
   animation: snow 1.5s linear infinite, blnk 7s linear infinite;
   z-index: -1;
+  opacity: 0.5;
 }
 
 @keyframes snow {
@@ -102,9 +103,7 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-.toggle:checked ~ .rain {
-  z-index: -1;
-}
+
 /*ــــــــــــــــــــــــــــــــــــــــــــــ
  # Card
 ــــــــــــــــــــــــــــــــــــــــــــــــــ*/
@@ -120,24 +119,18 @@ body {
   position: relative;
   display: flex;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
 }
 .Card .search-inputs input[type="search"] {
   position: relative;
-  width: 100%;
-  padding: 10px;
   font-size: 20px;
-  text-align: center;
-  outline: none;
+  width: 100%;
   border: none;
-  background: transparent;
-  border: 1px solid var(--orange-color);
-  border-right: 0;
-  color: #fff;
-  border-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  transition: var(--main-transition);
+  padding: 5px 0;
+  background-color: transparent;
+  color: #f2ab06;
+  outline: none;
+  border-bottom: 3px solid #333;
 }
 .Card .search-inputs input[type="search"]::placeholder {
   color: var(--orange-color);
@@ -146,23 +139,33 @@ body {
   opacity: 0;
   transition: var(--main-transition);
 }
+.Card .search-inputs .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+.Card .search-inputs input[type="search"]:focus ~ .underline {
+  background-color: #f2ab06;
+  transform: scaleX(1);
+}
 .Card .search-inputs input[type="button"] {
   position: relative;
   padding: 10px;
   font-size: 20px;
   text-align: center;
   outline: none;
-  border: 1px solid var(--orange-color);
-  border-left: 0;
-  background: rgba(61, 61, 61, 0.3);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  border-radius: 5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-left: 1px solid var(--main-color);
+  border: 0;
+  background: transparent;
+  color: #f2ab06;
+  border-left: 1px solid #f2ab06;
   cursor: pointer;
+  border-bottom: 3px solid #333;
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــ
  # Card weather-data
@@ -222,16 +225,15 @@ body {
 }
 .other-weather-container .card {
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 15px;
   gap: 10px;
+  border-radius: 26px;
+  background: #1d1f20;
+  box-shadow: 8px 8px 19px #191a1b, -8px -8px 19px #212425;
 }
 .other-weather-container .card h3 {
   font-size: 25px;
